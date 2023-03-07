@@ -11,16 +11,21 @@ import javax.swing.JOptionPane;
  * @author Odual
  */
 public class main {
+    
+
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+         Menu clsM = new Menu();
+        clsM.menuPrincipal();
 
         Menu();
     }    
 
     private static void Menu() {
+        /*
         int opcion;
         do {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -55,6 +60,7 @@ public class main {
                     break;
             }
         } while (opcion != 3);
-    }
+    }*/
 }
-   
+    
+}
