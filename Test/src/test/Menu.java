@@ -1,23 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package test;
 
-/**
- *
- * @author Dell
- */
 public class Menu {
     public void menuPrincipal(){
         ClsHelper clsH = new ClsHelper();
+        registrarUsuario newUser = new registrarUsuario();
         Modulo clsM = new Modulo();
         char opcion = ' ';
         do {
             opcion = clsH.recibeChar("Seleccione una opcion\n"
              + "A. Modulo Seguridad\n"
              + "B. Modulo Caja\n"
-             + "C. Modulo Ingreso de clientes\n"
+             + "C. Modulo Ingreso de clientes\n" // Registro Nuevos Clientes / Usuarios???
              + "D. Modulo Ingreso al cajero\n"
              + "E. Modulo Pantalla de bienvenida\n"
              + "F. Modulo Ingreso de dinero\n"
@@ -31,6 +25,7 @@ public class Menu {
                case 'B':
                   break;
                case 'C':
+                   newUser.registrarUsuario();
                   break;
                case 'D':
                   break;
