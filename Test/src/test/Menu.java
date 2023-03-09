@@ -1,51 +1,51 @@
 
 package test;
 
+import javax.swing.JOptionPane;
+
 public class Menu {
-    public void menuPrincipal(){
-        ClsHelper clsH = new ClsHelper();
-        registrarUsuario newUser = new registrarUsuario();
-        Modulo clsM = new Modulo();
-        char opcion = ' ';
+    public void MenuPrincipal() {
+        
+        Modulo clsE = new Modulo();
+        
+        
+       
+        int opcion;
         do {
-            opcion = clsH.recibeChar("Seleccione una opcion\n"
-             + "A. Modulo Seguridad\n"
-             + "B. Modulo Caja\n"
-             + "C. Modulo Ingreso de clientes\n" // Registro Nuevos Clientes / Usuarios???
-             + "D. Modulo Ingreso al cajero\n"
-             + "E. Modulo Pantalla de bienvenida\n"
-             + "F. Modulo Ingreso de dinero\n"
-             + "G. Modulo extracion de dinero\n"
-             + "H. ModuloTransferencia de dinero\n"                   
-             + "S. Salir\n");
-           switch(opcion){
-               case 'A':
-                   clsM.menuPrincipal();
-                  break;
-               case 'B':
-                  break;
-               case 'C':
-                   newUser.registrarUsuario();
-                  break;
-               case 'D':
-                  break;
-               case 'E':
-                   break;
-               case 'F':
-                   break;
-               case 'G':
-                   break;
-               case 'H':
-                   break;
-               case 'S':
-                   clsH.imprimeMensaje("Gracias por utilizar nuestra aplicacion");
-                   break;
-               default:
-                   clsH.imprimeMensaje("Opcion incorrecta intente nueva mente");
-                   break;
-                   
-           }                   
-        } while (opcion != 'S' && opcion != 's');
-    }   
+            opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
+                    "Bienvenido al Cajero Automático\n" +
+                    "1. Usuario\n" +
+                    "2. Administrador\n" +
+                    "3. Salir\n\n" +
+                    "Seleccione una opción:",
+                    "Cajero Automático", JOptionPane.PLAIN_MESSAGE));
+            switch (opcion) {
+                case 1:
+                    String usuario = JOptionPane.showInputDialog(null,
+                            "Ingrese su número de cuenta:",
+                            "Cajero Automático - Usuario", JOptionPane.PLAIN_MESSAGE);
+                    // Aquí iría el código para el menú del usuario
+                    clsE.MenuUsuario();
+                    break;
+                case 2:
+                    String admin = JOptionPane.showInputDialog(null,
+                            "Ingrese su contraseña:",
+                            "Cajero Automático - Administrador", JOptionPane.PLAIN_MESSAGE);
+                    // Aquí iría el código para el menú del administrador
+                    clsE.MenuAdmin();
+                    break;
+                case 3:
+                    JOptionPane.showMessageDialog(null,
+                            "Gracias por usar nuestro Cajero Automático",
+                            "Cajero Automático", JOptionPane.PLAIN_MESSAGE);
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null,
+                            "Opción inválida. Seleccione otra opción",
+                            "Cajero Automático", JOptionPane.PLAIN_MESSAGE);
+                    break;
+            }
+        } while (opcion != 3);
+    }
     
 }
